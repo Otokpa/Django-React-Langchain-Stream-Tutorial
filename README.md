@@ -3,9 +3,7 @@ Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
 
 ## Setting Up the Backend with Django
 
-### Initial Setup
-
-**Install Django**
+### Install Django
 
 Open your terminal or command prompt and run:
   ```bash
@@ -13,8 +11,6 @@ Open your terminal or command prompt and run:
   ```
 
 ### Create Your Project
-
-**Project Initialization**
 
 Navigate to your desired project directory and run:
   ```bash
@@ -26,13 +22,13 @@ Navigate to your desired project directory and run:
 cd Django_React_Langchain_Stream
 ```
 
-**Virtual Environment Setup**: A virtual environment is crucial for managing project-specific dependencies without affecting other projects or the global Python setup.
-
-- **Install `virtualenv`** (if you haven't already):
+**Virtual Environment Setup**
+> [!NOTE]
+> install `virtualenv` (if you haven't already).
   ```bash
   pip install virtualenv
 
-Create and Activate a Virtual Environment:
+Create and Activate a Virtual Environment
 
 Create a virtual environment in the project directory:
 ```
@@ -64,7 +60,7 @@ venv\Scripts\activate
 
 ### Test the Setup
 
-- **Run Server**: Validate your Django project setup by starting the server:
+- **Run Server**: Start the Django development server
 
     ```bash
     python manage.py runserver
@@ -80,10 +76,16 @@ venv\Scripts\activate
 ### Prerequisites
 
 - **Node.js and npm**: Ensure Node.js and npm are installed:
-    
+
+run: 
 ```bash
 node -v
 npm -v
+```
+if installed, you should see the version numbers.
+```
+v20.8.0
+10.1.0
 ```
 If not installed, download them from [the official Node.js website](https://nodejs.org/).
 
