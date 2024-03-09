@@ -27,6 +27,7 @@ cd Django_React_Langchain_Stream
 > install `virtualenv` (if you haven't already).
   ```bash
   pip install virtualenv
+```
 
 Create and Activate a Virtual Environment
 
