@@ -277,6 +277,46 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
               print(e)
   ```
 
+
+<details>
+<summary> What's happening here? </summary>
+The frontend establishes a WebSocket connection to the backend. This connection is used to send the user's input and receive streamed responses.
+
+this chain in the for loop:
+```python
+# Define the output parser
+output_parser = StrOutputParser()
+# Define the processing chain
+chain = prompt | llm.with_config({"run_name": "model"}) | output_parser.with_config({"run_name": "Assistant"})
+
+async for chunk in chain.astream_events({'input': message}, version="v1", include_names=["Assistant"]):
+    if chunk["event"] in ["on_parser_start", "on_parser_stream"]:
+        await self.send(text_data=json.dumps(chunk))
+```
+
+ouputs these chunks:
+
+```python
+{'event': 'on_parser_start', 'name': 'Assistant', 'run_id': '6150f5ac-30b4-48ba-a2f3-361638bf02a6', 'tags': ['seq:step:3'], 'metadata': {}, 'data': {}}
+{'event': 'on_parser_stream', 'name': 'Assistant', 'run_id': '6150f5ac-30b4-48ba-a2f3-361638bf02a6', 'tags': ['seq:step:3'], 'metadata': {}, 'data': {'chunk': ''}}
+{'event': 'on_parser_stream', 'name': 'Assistant', 'run_id': '6150f5ac-30b4-48ba-a2f3-361638bf02a6', 'tags': ['seq:step:3'], 'metadata': {}, 'data': {'chunk': 'Hello'}}
+...,
+{'event': 'on_parser_stream', 'name': 'Assistant', 'run_id': '6150f5ac-30b4-48ba-a2f3-361638bf02a6', 'tags': ['seq:step:3'], 'metadata': {}, 'data': {'chunk': ''}}
+{'event': 'on_parser_end', 'name': 'Assistant', 'run_id': '6150f5ac-30b4-48ba-a2f3-361638bf02a6', 'tags': ['seq:step:3'], 'metadata': {}, 'data': {'input': AIMessageChunk(content='Hello! I am a message. How can I assist you today?'), 'output': 'Hello! I am a message. How can I assist you today?'}}
+```
+
+These chunks are divided into different `event` types: `on_parser_start`, `on_parser_stream`, and `on_parser_end`, which the frontend handles to update the chat interface in real-time.
+
+1. `on_parser_start`: This event signifies the start of a new message stream. The frontend initializes a tracker for the message's content, preparing to display the incoming response piece by piece.
+
+2. `on_parser_stream`: As the backend processes the input, it streams back chunks of the response. Each chunk is appended to the ongoing message's content, allowing the response to appear gradually on the screen. This gives users a visual indication that their input is being processed.
+
+3. `on_parser_end`: This event indicates the end of the response stream. While not directly handled in the provided frontend code, it signifies that the full response has been delivered. In practice, this could be used to trigger additional UI updates, such as indicating that the chatbot is ready for more input.
+
+For more information on the LangChain Streaming options, see the [Streaming With LangChain documentation](https://python.langchain.com/docs/expression_language/streaming).
+</details>
+
+
 ---
 ### Set Up Websocket Routing
 
