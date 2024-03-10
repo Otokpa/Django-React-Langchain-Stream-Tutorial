@@ -3,11 +3,11 @@ Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
 
 ---
 
----
-![Alt text](assets/LangChain_streaming.gif "Gif of the streaming app")
-
 > [!NOTE]
 > You can find the [GitHub Project Page here](https://github.com/Otokpa/Django_React_Langchain_Stream).
+
+![Alt text](assets/LangChain_streaming.gif "Gif of the streaming app")
+
 
 ## Setting Up the Backend with Django
 
@@ -321,7 +321,8 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
       ),  
   })
   ```
-
+  
+---
 ### Integrate with React
 
 - Replace the code in `frontend/src/App.js` with the following:
@@ -536,6 +537,7 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
   }
   ```
 
+---
 ### All done! To run the application, start the Django server and the React development server:
 
 - in 2 separate terminals, run:
