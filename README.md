@@ -1,15 +1,20 @@
 # Real-time LangChain Streaming with Django and React Tutorial
-Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
 
----
+<br/><br/>
+
+### Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
+
+<br/><br/>
 
 > [!NOTE]
 > You can find the [GitHub Project Page here](https://github.com/Otokpa/Django_React_Langchain_Stream).
 
+<br/><br/>
+
 ![Alt text](assets/LangChain_streaming.gif "Gif of the streaming app")
 
 
-## Setting Up the Backend with Django
+## 🚀 Setting Up the Backend with Django
 
 -----
 ### Install Django
@@ -95,7 +100,7 @@ Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
 
   Stop the server with `CONTROL-C`.
 
-# Frontend Setup with React
+# 🔧 Frontend Setup with React
 
 ---
 ### Prerequisites
@@ -186,7 +191,7 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
 > Never commit your `.env` file to a public repository.
 
 ---
-### Configure the Django settings.py for Websockets
+### 🔧 Configure the Django settings.py for Websockets
 
 - In `settings.py`, add `langchain_stream` and `daphne` to `INSTALLED_APPS`:
 
