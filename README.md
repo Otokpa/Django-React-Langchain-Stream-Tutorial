@@ -1,4 +1,4 @@
-# Streaming LLM Output with Django, React, and LangChain
+# Streaming LLM Output with Django, React, and LangChain Tutorial
 
 <br/><br/>
 
