@@ -1,4 +1,4 @@
-# Real-time LangChain Streaming with Django and React Tutorial
+# Streaming LLM Output with Django, React, and LangChain
 
 <br/><br/>
 
@@ -12,6 +12,14 @@
 <br/><br/>
 
 ![Alt text](assets/LangChain_streaming.gif "Gif of the streaming app")
+
+## Introduction:
+
+This tutorial provides a guide to creating an application that leverages Django, React, Langchain, and OpenAI’s powerful language models. My focus will be on crafting a solution that streams the output of the Large Language Model (LLM).
+
+I’ll start by setting up our project environment and exploring the core technologies involved: Django, a high-level Python web framework known for its simplicity and robustness; React, a JavaScript library for building user interfaces with high performance and a responsive user experience; Langchain, a toolkit that simplifies the integration of language models into applications; and OpenAI’s GPT models, which stand at the forefront of AI-driven text generation.
+
+Throughout this tutorial, we’ll delve into the architecture of our application, demonstrating how to establish WebSocket connections for real-time messaging and how to seamlessly stream the output of an LLM to make it feel responsive to end-users. By the end of this guide, you’ll have a fully functional chat application.
 
 
 ## 🚀 Setting Up the Backend with Django
@@ -105,7 +113,7 @@
 ---
 ### Prerequisites
 
-- **Ensure `Node.js` and `npm` are installed:
+- Ensure `Node.js` and `npm` are installed:
 
   run:
 - 
@@ -585,7 +593,7 @@ For more information on the LangChain Streaming options, see the [Streaming With
 ---
 ### All done! To run the application, start the Django server and the React development server:
 
-- in 2 separate terminals, run:
+- in 2 separate terminals, make sure you’re in the root directory of your Django project, run:
 
   ```bash
   python manage.py runserver
