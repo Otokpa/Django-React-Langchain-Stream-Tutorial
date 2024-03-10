@@ -279,7 +279,7 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
 
 
 <details>
-<summary> What's happening here? </summary>
+<summary> Insight into this views.py code </summary>
 The frontend establishes a WebSocket connection to the backend. This connection is used to send the user's input and receive streamed responses.
 
 this chain in the for loop:
