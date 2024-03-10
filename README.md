@@ -1,8 +1,13 @@
 # Real-time LangChain Streaming with Django and React Tutorial
 Step-by-step tutorial for streaming LLM output via LangChain, Django, and React.
+
+---
+
+---
 ![Alt text](assets/LangChain_streaming.gif "Gif of the streaming app")
 
-If you'd like to see the final product before diving into the steps, check out the [GitHub Page here](https://github.com/Otokpa/Django_React_Langchain_Stream).
+> [!NOTE]
+> You can find the [GitHub Project Page here](https://github.com/Otokpa/Django_React_Langchain_Stream).
 
 ## Setting Up the Backend with Django
 
@@ -177,8 +182,8 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
   
   Replace the value with your actual Openai API key.
   
-  > [!WARNING]
-  > Never commit your `.env` file to a public repository.
+> [!WARNING]
+> Never commit your `.env` file to a public repository.
 
 ---
 ### Configure the Django settings.py for Websockets
@@ -191,8 +196,8 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
   'langchain_stream',
   ```
 
-  > [!WARNING]
-  > Daphne must be listed before `django.contrib.staticfiles` in INSTALLED_APPS.
+> [!WARNING]
+> Daphne must be listed before `django.contrib.staticfiles` in INSTALLED_APPS.
 
   ![Alt text](assets/Django_installed_apps.png "INSTALLED_APPS in settings.py")
 
