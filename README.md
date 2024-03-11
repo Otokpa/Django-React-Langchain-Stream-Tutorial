@@ -84,7 +84,7 @@ Throughout this tutorial, we’ll delve into the architecture of our application
 - Install Django in the Virtual Environment:
 
   ```bash
-  pip install Django==5.0.3
+  python -m pip install Django==5.0.3
   ```
 
 
@@ -236,7 +236,7 @@ You can now open the project `Django_React_Langchain_Stream` in your IDE.
   In the terminal, run:
 
   ```bash
-  pip install langchain==0.1.11 langchain-community==0.0.26 langchain-openai==0.0.8 channels==4.0.0 daphne==4.1.0 python-dotenv==1.0.1
+  python -m pip install langchain==0.1.11 langchain-community==0.0.26 langchain-openai==0.0.8 channels==4.0.0 daphne==4.1.0 python-dotenv==1.0.1
   ```
 
   In langchain_stream/views.py, replace with the following code:
